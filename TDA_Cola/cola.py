@@ -5,13 +5,11 @@ class Cola:
     def __init__(self):
         self.primero = None
         self.ultimo = None
-        self.size = 0
 
     def empty(self):
         return self.primero == None
 
     def push(self, ingrediente):
-        self.size += 1
         if self.empty():
             self.primero = self.ultimo = Nodo(ingrediente)
         else:
@@ -35,4 +33,8 @@ class Cola:
             print("Pizza con ingrediente -> "+ aux.ingrediente)
 
     def pop(self):
-        pass
+        if self.empty():
+            print("No hay ordenes agregados en la cola...")
+        else:
+            self.primero = self.primero.siguiente
+            input("Orden entregado con exito...")

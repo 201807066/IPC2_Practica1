@@ -33,8 +33,9 @@ def menu():
             cola.firstOrder()
             confirm = input("Confirmar orden Si/No: ")
 
-            if confirm.lower() == "si":
-                pass
+            if confirm.lower().strip() == "si":
+                cola.pop()
+                menu()
             else:
                 menu()
             break
